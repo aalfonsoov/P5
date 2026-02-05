@@ -1,0 +1,335 @@
+html, #sky-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 33.33%;
+  height: 100%;
+  background-image: url('./images/sky.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: #1a1a1a;
+  overflow: hidden;
+  display: flex;
+}
+
+#p5-holder {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 33.33%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+  background: transparent;
+}
+
+#cabin-overlay {
+  position: fixed;
+  top: 71.2%;
+  left: 16.4%;
+  transform: translate(-50%, -50%);
+  width: 34%;
+  height: 120%;
+  background-image: url('./images/cabina.png');
+  background-size: 120%;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 10;
+  pointer-events: none;
+}
+
+
+#signup-section {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 66.67%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(40, 40, 40, 0.95) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  padding: 40px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+#signup-container {
+  background: rgba(50, 50, 50, 0.8);
+  padding: 40px;
+  border-radius: 10px;
+  border: 2px solid rgba(100, 150, 255, 0.5);
+  max-width: 450px;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+#logo {
+  width: 200px;
+  height: 200px;
+  display: block;
+  margin: 0 auto 20px auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+#signup-container h1 {
+  color: #000;
+  text-align: center;
+  margin: 0 0 30px 0;
+  font-size: 28px;
+  font-family: 'Courier New', 'Courier', monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  color: #000;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-family: 'Courier New', 'Courier', monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px 12px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #000;
+  border-radius: 0;
+  color: #000;
+  font-family: 'Courier New', 'Courier', monospace;
+  font-weight: bold;
+  font-size: 14.42px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-bottom: 2px solid #000;
+  background: transparent;
+  box-shadow: none;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submit-btn {
+  padding: 12px 30px;
+  background: solid black;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+
+
+/* ========================
+   PALANCA DEL AVIÓN
+======================== */
+
+#lever-overlay {
+  position: absolute;
+  bottom: -110px;
+  left: 40%;
+  transform: translateX(-50%);
+  width: 139px;
+  height: 280px;
+  background-image: url('./images/palanca.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 11;
+  pointer-events: none;
+}
+
+/* =========================
+   CARPETA "CLASIFICADO"
+========================= */
+
+.folder-wrap {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+#signup-container {
+  position: relative;
+  max-width: 520px;
+  width: 100%;
+  padding: 42px 38px 34px 38px !important;
+
+  /* Papel manila */
+  background: linear-gradient(180deg, rgba(232, 204, 160, 0.98) 0%, rgba(217, 186, 140, 0.98) 100%) !important;
+  border: 2px solid rgba(60, 45, 25, 0.55) !important;
+  border-radius: 10px;
+
+  /* Sombra de "carpeta" */
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.22) !important;
+}
+
+/* Textura sutil (ruido simulado) */
+#signup-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255,255,255,0.12), transparent 45%),
+    radial-gradient(circle at 85% 28%, rgba(0,0,0,0.08), transparent 55%),
+    radial-gradient(circle at 30% 75%, rgba(0,0,0,0.06), transparent 55%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.03) 0 2px, rgba(0,0,0,0.02) 2px 4px);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* Borde interior estilo expediente */
+#signup-container::after {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border-radius: 8px;
+  border: 1px dashed rgba(60, 45, 25, 0.35);
+  pointer-events: none;
+}
+
+/* Pestaña superior tipo folder */
+.folder-tab {
+  position: absolute;
+  top: -18px;
+  left: 28px;
+  width: 190px;
+  height: 44px;
+  border-radius: 10px 10px 6px 6px;
+  z-index: -1000;
+
+  background: linear-gradient(180deg, rgba(238, 214, 174, 0.98) 0%, rgba(222, 193, 146, 0.98) 100%);
+  border: 2px solid rgba(60, 45, 25, 0.55);
+  border-bottom: none;
+
+  box-shadow: 0 10px 18px rgba(0,0,0,0.20);
+}
+
+/* Contenido encima de texturas */
+.folder-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Sellos */
+.folder-stamp {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  z-index: 2;
+
+  padding: 10px 14px;
+  border: 3px solid rgba(180, 30, 30, 0.85);
+  color: rgba(180, 30, 30, 0.90);
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transform: rotate(0deg);
+  border-radius: 6px;
+
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.15);
+  user-select: none;
+  pointer-events: none;
+}
+
+.folder-stamp.secondary {
+  top: 88px;
+  right: 36px;
+  transform: rotate(8deg);
+  border-color: rgba(20, 20, 20, 0.55);
+  color: rgba(20, 20, 20, 0.65);
+  background: rgba(255,255,255,0.18);
+}
+
+#signup-container h1 {
+  color: rgba(25, 20, 12, 0.92) !important;
+  position: relative;
+  z-index: 2;
+#signup-contain
+
+.folder .form-group label {
+  color: rgba(35, 25, 12, 0.78) !important;
+  font-weight: 700;
+}
+
+/* Inputs tipo “tinta” sobre papel */
+#signup-container .form-group input,
+#signup-container .form-group textarea {
+  background: rgba(20, 20, 20, 0.10) !important;
+  border: 1px solid rgba(60, 45, 25, 0.40) !important;
+  color: rgba(15, 12, 8, 0.92) !important;
+}
+
+#signup-container .form-group input:focus,
+#signup-container .form-group textarea:focus {
+  border-color: rgba(120, 70, 20, 0.70) !important;
+  box-shadow: 0 0 0 3px rgba(120, 70, 20, 0.18) !important;
+  background: rgba(20, 20, 20, 0.06) !important;
+}
+
+/* Botón estilo formulario */
+#signup-container .submit-btn {
+  background: rgba(0, 0, 0, 0.85) !important;
+  border: 2px solid rgba(0, 0, 0, 0.85) !important;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.22) !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-family: 'Courier New', 'Courier', monospace !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  position: relative;
+  z-index: 2;
+}
+
+#signup-container .submit-btn:hover {
+  background: rgba(30, 30, 30, 0.95) !important;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.35) !important;
+}
+}

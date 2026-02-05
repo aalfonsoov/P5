@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Top Gun Inscripción</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="artista.css" />
+
+  <!-- p5.js -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Canvas (tercio izquierdo) -->
+  <div id="p5-holder" aria-hidden="true">
+    <div id="sky-background"></div>
+  </div>
+
+  <!-- Cabina overlay -->
+  <div id="cabin-overlay"></div>
+
+  <!-- Palanca del avión -->
+  <div id="lever-overlay"></div>
+
+  <!-- Formulario de inscripción (lado derecho) -->
+  <div id="signup-section">
+    <div id="signup-container" class="folder-wrap">
+      <div class="folder" role="group" aria-label="Carpeta clasificada">
+        <div class="folder-tab" aria-hidden="true"></div>
+
+        <div class="folder-stamp" aria-hidden="true">CLASIFICADO</div>
+
+        <div class="folder-content">
+          <img src="./images/logo.png" alt="Logo" id="logo">
+          <h1>Inscripción</h1>
+
+          <form id="signup-form">
+            <div class="form-group">
+              <label for="name">Nombre:</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Teléfono:</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+              <label for="message">Mensaje:</label>
+              <textarea id="message" name="message" rows="5"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Firmar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Sketch -->
+  <script src="lluvia.js"></script>
+  <!-- Control de Palanca Rotativa -->
+  <script src="palanca.js"></script>
+</body>
+
+</html>
